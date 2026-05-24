@@ -2,14 +2,14 @@
 version: "3"
 services:
  devopsdb:
-   image: shaikmustafa/harikanew:dbimage
+   image: mdprasad/automation:db
    ports:
      - "3306:3306"
    networks:
      - mynetwork
 
  application:
-   image: shaikmustafa/harikanew:appimage
+   image: mdprasad/automation:app
    ports:
      - "1111:8080"
    depends_on:
