@@ -8,6 +8,8 @@ services:
       - "3306:3306"
     networks:
       - mynetwork
+    deploy:
+      replicas: 1
 
   application:
     image: mdprasad/automation:app
@@ -17,6 +19,8 @@ services:
       - devopsdb
     networks:
       - mynetwork
+    deploy:
+      replicas: 3
 
 networks:
   mynetwork:
