@@ -1,24 +1,23 @@
 ---
 version: "3"
+
 services:
- devopsdb:
-   image: mdprasad/automation:db
-   ports:
-     - "3306:3306"
-   networks:
-     - mynetwork
+  devopsdb:
+    image: mdprasad/automation:db
+    ports:
+      - "3306:3306"
+    networks:
+      - mynetwork
 
-
- application:
-   image: mdprasad/automation:app
-   ports:
-     - "1111:8080"
-   depends_on:
-     - "devopsdb"
-   networks:
-     - mynetwork
-
+  application:
+    image: mdprasad/automation:app
+    ports:
+      - "1111:8080"
+    depends_on:
+      - devopsdb
+    networks:
+      - mynetwork
 
 networks:
-  - mynetwork:
-      driver: overlay
+  mynetwork:
+    driver: overlay
